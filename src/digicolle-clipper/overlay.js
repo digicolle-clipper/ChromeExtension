@@ -29,7 +29,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
           var context = canvas.getContext('2d');
           context.fillRect(0, 0, w, h);
           context.drawImage(img, -x, -y);
+          var png = canvas.toDataURL();
+          console.log(png);
           document.body.removeChild(document.getElementById('overlay'));
+          
         }, 100);
         break;
       default:
